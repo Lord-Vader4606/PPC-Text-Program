@@ -3,9 +3,9 @@ from os import system
 from twilio.rest import Client
 
 VERSION = "0.0.1"
-ACCOUNT_SID = "AC7aeb3e4c4dba33f3c1ab0aaa51030cb1"
-AUTH_TOKEN = "64cb713da7528c47f745b2848ab77a15"
-PHONE_NUMBER = "+18665117122"
+ACCOUNT_SID = ""
+AUTH_TOKEN = ""
+PHONE_NUMBER = ""
 
 system("cls")
 system("clear")
@@ -14,7 +14,7 @@ print(f"Text Program v{VERSION}\nFetching Database...")
 
 # FETCH DATABASE
 try:
-    text_database = get("https://api.pizzawait.com/export_text_db.php").json()
+    text_database = get("FETCH_API_HERE").json()
 except:
     print("Error - Stopping")
     SystemExit()
@@ -93,8 +93,8 @@ while not request == "2":
         option = message_menu()
 
         if option == "test":
-            msg = text(message.replace("{@user}", "Erik"), "7758359567", "Erik") # Send to Erik
-            msg = text(message.replace("{@user}", "Steve"), "8015104410", "Steve") # Send to Steve
+            msg = text(message.replace("{@user}", "Erik"), "", "Erik") # Send to Erik
+            msg = text(message.replace("{@user}", "Steve"), "", "Steve") # Send to Steve
             print("Done!")
         elif option == "everyone":
             sent = 0
